@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Member } from '../_models/members';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -13,12 +11,12 @@ export class MembersService {
   baseUrl=environment.apiUrl;
    httpOptions={
     headers: new HttpHeaders({
-      Authorization: 'Bearer '+ JSON.parse(localStorage.getItem('user')).token
+      Authorization: 'Bearer '+ JSON.parse(localStorage.getItem('user'))?.token
     })
   }
 
   constructor(private http: HttpClient) { }
-  getMembers(){
+  getMembers():Observable<Member[]>{
     return this.http.get<Member[]>(this.baseUrl+'users',this.httpOptions);
   }
 

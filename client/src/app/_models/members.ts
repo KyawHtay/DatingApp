@@ -1,18 +1,21 @@
 import { Photo } from "./photo";
-    export interface Member {
-        UserName: string;
-        Gender: string;
-        DateOfBirth: string;
-        KnownAs: string;
-        Created: Date;
-        LastActive: Date;
-        Introduction: string;
-        LookingFor: string;
-        Interests: string;
-        City: string;
-        Country: string;
-        photos: Photo[];
-    }
+export interface Member {
+    id: number;
+    username: string;
+    photoUrl: string;
+    age: number;
+    knownAs: string;
+    created: Date;
+    lastActive: Date;
+    gender: string;
+    introduction: string;
+    lookingFor: string;
+    interests: string;
+    city: string;
+    country: string;
+    photos: Photo[];
+  }
+  
 
 
 
