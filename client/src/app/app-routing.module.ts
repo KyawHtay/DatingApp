@@ -10,6 +10,7 @@ import {HomeComponent} from './home/home.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MemberEditComponent} from './members/member-edit/member-edit.component';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
     {
@@ -31,7 +32,8 @@ const routes: Routes = [
             },
             {
                 path: 'member/edit',
-                component: MemberEditComponent
+                component: MemberEditComponent,
+                canDeactivate:[PreventUnsavedChangesGuard]
             },
             {
                 path: 'lists',
